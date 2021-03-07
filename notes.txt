@@ -1,0 +1,28 @@
+Need policies:
+
+Data integration - compartment level and root  - need ocid of created resource
+Data Flow - root level
+Data Science - root level
+
+Need Dynamic Group:
+
+Data Science
+
+
+Is there a way to internally refer to things such as Tenancy ID's, as well as how to integrate with the form you fill from the console (region, compartment)
+
+What deliverable do you need to create the one click template button on OCI?
+
+
+yaml file in zip
+
+tenancy ocid is not required
+
+and region is not required
+
+ad also will be figured out
+
+create a resource using terraform, depends on, create something else.
+
+
+assume user is an administrator
