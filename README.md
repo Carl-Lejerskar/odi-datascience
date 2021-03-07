@@ -6,6 +6,11 @@ Data Flow is used to run your Apache Spark applications.
 
 The Oracle Data Integrator Component of this architecture needs to be launched using the Oracle Data Integrator marketplace image (https://cloudmarketplace.oracle.com/marketplace/en_US/listing/62627436)
 
+## Deploy Using Oracle Resource Manager
+
+1. Click [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?region=home&zipUrl=https://github.com/Carl-Lejerskar/odi-datascience/blob/dacdfe2ec9883bb8ac41a0e5ee5835214bde25d4/odi-datascience.zip)
+
+
 
 ## Terraform Provider for Oracle Cloud Infrastructure
 The OCI Terraform Provider is now available for automatic download through the Terraform Provider Registry. 
