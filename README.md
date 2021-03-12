@@ -8,7 +8,7 @@ The Oracle Data Integrator Component of this architecture needs to be launched u
 
 ## Deploy Using Oracle Resource Manager
 
-1. Click [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/Carl-Lejerskar/odi-datascience/releases/download/0.0.1/odi-datascience.zip)
+1. Click [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/Carl-Lejerskar/odi-datascience/archive/0.0.1.zip)
 
 
 ## Terraform Provider for Oracle Cloud Infrastructure
