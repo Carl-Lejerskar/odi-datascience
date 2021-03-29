@@ -200,16 +200,16 @@ variables:
     default: "Test_Stream_Pool"
     visible: true
     required: false
-    title: "Steam Pool Name for Streaming"
-    description: "Steam Pool Name for Streaming"
+    title: "Stream Pool Name for Streaming"
+    description: "Stream Pool Name for Streaming"
 
   stream_name:
     type: string
     default: "Test_Stream"
     visible: true
     required: false
-    title: "Steam Name for Streaming"
-    description: "Steam Name for Streaming"
+    title: "Stream Name for Streaming"
+    description: "Stream Name for Streaming"
 
   stream_partitions:
     type: number
