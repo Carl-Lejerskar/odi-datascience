@@ -7,20 +7,6 @@ variable "tenancy_ocid" {}
 variable "region" {}
 variable "compartment_ocid" {}
 
-variable "user_ocid" {
-  default = ""
-}
-variable "fingerprint" {
-  default = ""
-}
-variable "private_key_path" {
-  default = ""
-}
-
-variable "public_ssh_key" {
-  default = ""
-}
-
 variable "generate_public_ssh_key" {
   default = true
 }
