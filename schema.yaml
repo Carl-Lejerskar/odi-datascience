@@ -52,6 +52,16 @@ variableGroups:
   - workspace_display_name
   - workspace_description
   - workspace_is_private_network_enabled
+  - service_connector_display_name
+  - service_connector_source_kind
+  - service_connector_source_cursor_kind
+  - service_connector_target_kind
+  - service_connector_target_bucket
+  - service_connector_target_object_name_prefix
+  - service_connector_description
+  - ocir_repo_name
+  - ocir_user_name
+  - ocir_user_password
 
     
 variables:
@@ -107,7 +117,7 @@ variables:
     type: string
     default: "data_bucket"
     visible: true
-    required: false
+    required: true
     title: "Name for Object Storage Bucket"
     description: "Name for Object Storage Bucket"
 
@@ -115,7 +125,7 @@ variables:
     type: string
     default: "NoPublicAccess"
     visible: true
-    required: false
+    required: true
     title: "Access Type for Object Storage Bucket"
     description: "Access Type for Object Storage Bucket"
 
@@ -123,7 +133,7 @@ variables:
     type: string
     default: "Standard"
     visible: true
-    required: false
+    required: true
     title: "Tier for Object Storage Bucket"
     description: "Tier for Object Storage Bucket"
 
@@ -131,7 +141,7 @@ variables:
     type: string
     default: "Disabled"
     visible: true
-    required: false
+    required: true
     title: "Versioning for Object Storage Bucket"
     description: "Versioning for Object Storage Bucket"
 
@@ -142,7 +152,7 @@ variables:
     type: string
     default: "My_Data_Catalog"
     visible: true
-    required: false
+    required: true
     title: "Name for Data Catalog"
     description: "Name for Data Catalog"
 
@@ -152,7 +162,7 @@ variables:
     type: string
     default: "Test_Project"
     visible: true
-    required: false
+    required: true
     title: "Project Description for Data Science Project"
     description: "Project Description for Data Science Project"
 
@@ -160,7 +170,7 @@ variables:
     type: string
     default: "My Data Science Project"
     visible: true
-    required: false
+    required: true
     title: "Project Display Name for Data Science Project"
     description: "Project Display Name for Data Science Project"
 
@@ -168,7 +178,7 @@ variables:
     type: string
     default: "Test Notebook Session"
     visible: true
-    required: false
+    required: true
     title: "Notebook Session Display Name for Data Science Project"
     description: "Notebook Session Display Name for Data Science Project"
 
@@ -176,7 +186,7 @@ variables:
     type: oci:core:instanceshape:name
     default: VM.Standard2.1
     visible: true
-    required: false
+    required: true
     title: "VM Shape for Data Science Project"
     description: "VM Shape for Data Science Project"
     dependsOn:
@@ -189,7 +199,7 @@ variables:
     multipleOf: 1
     default: 50
     visible: true
-    required: false
+    required: true
     title: "Block Storage Size for Data Science Project"
     description: "Block Storage Size for Data Science Project"
 
@@ -199,7 +209,7 @@ variables:
     type: string
     default: "Test_Stream_Pool"
     visible: true
-    required: false
+    required: true
     title: "Stream Pool Name for Streaming"
     description: "Stream Pool Name for Streaming"
 
@@ -207,7 +217,7 @@ variables:
     type: string
     default: "Test_Stream"
     visible: true
-    required: false
+    required: true
     title: "Stream Name for Streaming"
     description: "Stream Name for Streaming"
 
@@ -218,7 +228,7 @@ variables:
     multipleOf: 1
     default: 1
     visible: true
-    required: false
+    required: true
     title: "Number of Stream Partitions for Streaming"
     description: "Number of Stream Partitions for Streaming"
 
@@ -229,7 +239,7 @@ variables:
     multipleOf: 1
     default: 24
     visible: true
-    required: false
+    required: true
     title: "Stream Retention in Hours"
     description: "Stream Retention in Hours"
 
@@ -239,7 +249,7 @@ variables:
     type: string
     default: "dataflow-logs"
     visible: true
-    required: false
+    required: true
     title: "Log Bucket for Data Flow"
     description: "Log Bucket for Data Flow"
 
@@ -247,7 +257,7 @@ variables:
     type: string
     default: "Test data flow app"
     visible: true
-    required: false
+    required: true
     title: "Application Display Name for Data Flow"
     description: "Application Display Name for Data Flow"
 
@@ -255,7 +265,7 @@ variables:
     type: oci:core:instanceshape:name
     default: "VM.Standard2.1"
     visible: true
-    required: false
+    required: true
     title: "Application Driver Shape for Data Flow"
     description: "Application Driver Shape for Data Flow"
     dependsOn:
@@ -265,7 +275,7 @@ variables:
     type: oci:core:instanceshape:name
     default: "VM.Standard2.1"
     visible: true
-    required: false
+    required: true
     title: "Application Executor Shape for Data Flow"
     description: "Application Executor Shape for Data Flow"
     dependsOn:
@@ -283,7 +293,7 @@ variables:
     type: string
     default: "Java"
     visible: true
-    required: false
+    required: true
     title: "Application Language for Data Flow"
     description: "Application Language for Data Flow"
 
@@ -294,7 +304,7 @@ variables:
     multipleOf: 1
     default: 1
     visible: true
-    required: false
+    required: true
     title: "Number of Executors for Data Flow Application"
     description: "Number of Executors for Data Flow Application"
 
@@ -302,7 +312,7 @@ variables:
     type: string
     default: "2.4.4"
     visible: true
-    required: false
+    required: true
     title: "Application Spark Version for Data Flow"
     description: "Application Spark Version for Data Flow"
 
@@ -310,7 +320,7 @@ variables:
     type: string
     default: "convert.Convert"
     visible: true
-    required: false
+    required: true
     title: "Application Class Name for Data Flow"
     description: "Application Class Name for Data Flow"
 
@@ -318,7 +328,7 @@ variables:
     type: string
     default: "Test Java Application"
     visible: true
-    required: false
+    required: true
     title: "Application Description for Data Flow"
     description: "Application Description for Data Flow"
 
@@ -328,7 +338,7 @@ variables:
     type: string
     default: "Test_DI_Workspace"
     visible: true
-    required: false
+    required: true
     title: "Workplace Display Name for Data Integration Service"
     description: "Workplace Display Name for Data Integration Service"
 
@@ -336,9 +346,100 @@ variables:
     type: string
     default: "Test DI Workspace"
     visible: true
-    required: false
+    required: true
     title: "Workplace Description for Data Integration Service"
     description: "Workplace Description for Data Integration Service"
+
+
+    # Service Connector Hub Variables
+  service_connector_display_name:
+    type: string
+    default: "Test_Service_Connector"
+    visible: true
+    required: true
+    title: "Service Connector Hub Display Name"
+    description: "Service Connector Hub Display Name"
+
+        #Source Information
+  service_connector_source_kind:
+    type: string
+    default: "streaming"
+    visible: true
+    required: true
+    title: "Source Kind for Service Connector Hub"
+    description: "Source Kind for Service Connector Hub"
+  
+  service_connector_source_cursor_kind:
+    type: string
+    default: "TRIM_HORIZON"
+    visible: true
+    required: true
+    title: "Cursor Kind for Service Connector Hub"
+    description: "Starts consuming from the oldest available message in the stream."
+
+
+  service_connector_target_kind:
+    type: string
+    default: "objectStorage" 
+    visible: true
+    required: true
+    title: "Target Kind for Service Connector Hub"
+    description: "Selecting the target of object storage."
+
+  service_connector_target_bucket:
+    type: string
+    default: "data_bucket"
+    visible: true
+    required: true
+    title: "Bucket Target for Service Connector Hub"
+    description: "Selecting the target of data_bucket."
+
+  service_connector_target_object_name_prefix:
+    type: string
+    default: "data"
+    visible: true
+    required: true
+    title: "Object Name Prefix for Service Connector Hub"
+    description: "Using the prefix of 'data'."
+
+  service_connector_description:
+    type: string
+    default: "Used to connect streaming to object storage"
+    visible: true
+    required: true
+    title: "Service Connector Hub Description"
+    description: "Describes the use case for the Service Connector Hub."
+
+  service_connector_tasks_kind:
+    type: string
+    default: "function"
+    visible: true
+    required: true
+    title: "Service Connector Hub Task Kind"
+    description: "The kind of task used between the source and target."
+
+  #OCIR Variables
+
+  ocir_repo_name:
+    type: string
+    required: true
+    visibile: true
+    title: "OCIR repository name"
+    description: "Oracle Cloud Infrastructure Registry repository name (for example functions)"
+
+  ocir_user_name:
+    type: string
+    required: true
+    visibile: true
+    title: "OCIR username"
+    description: "Oracle Cloud Infrastructure Registry username (your OCI username)" 
+
+  ocir_user_password:
+    type: password
+    required: true
+    visibile: true
+    title: "OCIR user password"
+    description: "Oracle Cloud Infrastructure Registry user password (your OCI user authtoken)" 
 
   workspace_is_private_network_enabled:
     type: boolean

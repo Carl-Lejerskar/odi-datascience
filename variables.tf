@@ -134,3 +134,64 @@ variable "workspace_is_private_network_enabled" {
   default = true
 }
 
+# Functions/OCIR Variables
+
+variable "release" {
+  description = "Reference Architecture Release (OCI Architecture Center)"
+  default     = "1.0"
+}
+
+variable "ocir_repo_name" {
+  default = "decoder"
+}
+
+
+
+variable "ocir_user_name" {
+  default = ""
+}
+
+variable "ocir_user_password" {
+  default = ""
+}
+
+locals {
+  ocir_docker_repository = join("", [lower(lookup(data.oci_identity_regions.oci_regions.regions[0], "key" )), ".ocir.io"])
+  ocir_namespace = lookup(data.oci_identity_tenancy.oci_tenancy, "name" )
+}
+
+
+
+#Service Connector Variables
+
+variable "service_connector_display_name" {
+  default = "Test_Service_Connector"
+}
+
+variable "service_connector_source_kind" {
+  default = "streaming"
+}
+
+variable "service_connector_source_cursor_kind" {
+  default = "TRIM_HORIZON"
+}
+
+variable "service_connector_target_kind" {
+  default = "objectStorage"
+}
+
+variable "service_connector_target_bucket" {
+  default = "data_bucket"
+}
+
+variable "service_connector_target_object_name_prefix" {
+  default = "data"
+}
+
+variable "service_connector_description" {
+  default = "Used to connect streaming to object storage"
+}
+
+variable "service_connector_tasks_kind" {
+  default = "function"
+}
